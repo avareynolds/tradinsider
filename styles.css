@@ -1,0 +1,66 @@
+
+/* Reset margin and padding for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* This ensures padding does not affect the total width or height of elements */
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+.background-container {
+    min-height: 100vh; /* Use viewport height to ensure it covers the full height of the screen */
+    background-image: url('bg_image.png'); /* Updated to the correct image name */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center children horizontally */
+    justify-content: center; /* Center children vertically */
+}
+
+.main-text {
+    color: white;
+    text-align: center;
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 150px; /* Space below the main text */
+}
+
+.secondary-text {
+    color: white;
+    font-size: 24px;
+    margin-top: 50px; /* Space above the secondary text */
+    display: block;
+    font-style: 36px;
+    font-weight: bold;
+    text-align: center; /* Ensure secondary text is also centered */
+}
+
+.clickable-image {
+    margin-top: 100px; /* Space above the clickable image */
+    display: block; /* This will allow margin to be applied properly */
+    margin-left: auto; /* Auto margins for left and right will center the image if it has a defined width */
+    margin-right: auto;
+}
+
+.secondary-image-container img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Center image horizontally */
+}
+
+/* Responsive adjustments for mobile screens */
+@media only screen and (max-width: 600px) {
+    .background-container {
+        min-height: 100vh;
+    }
+    .secondary-image-container img {
+        max-width: 80%;
+    }
+}
