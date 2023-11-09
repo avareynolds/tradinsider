@@ -49,17 +49,61 @@ html, body {
     font-family: 'Open Sans', sans-serif;
     text-align: center;
     font-size: 32px; 
-    margin-top: 40px; 
+    margin-top: 100px; 
     font-weight: bold;
     display: block;
 }
 
-.clickable-image {
-    margin-top: 150px; /* Space above the clickable image */
-    display: block; /* This will allow margin to be applied properly */
-    margin-left: auto; /* Auto margins for left and right will center the image if it has a defined width */
-    margin-right: auto;
+.text-telegram {
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    text-align: left;
+    font-size: 24px; 
+    margin-top: 100px; 
+    font-weight: bold;
+    display: block;
 }
+
+.text-whatsapp {
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    text-align: right;
+    font-size: 24px; 
+    margin-top: 100px; 
+    font-weight: bold;
+    display: block;
+}
+
+.clickable-images-container {
+    position: relative; /* This makes it a reference for absolutely positioned children */
+    height: 200px; /* Set to the height of your tallest image */
+    width: 400px; /* Set to the combined width of both images plus some space */
+  }
+  
+  .clickable-image_telegram,
+  .clickable-image_whatsapp {
+    position: absolute; /* This takes the links out of the normal flow and positions them relative to their parent */
+    top: 20px; /* Adjust the top position as needed */
+    margin-top: 40px; 
+  }
+  
+  .clickable-image_telegram img {
+    width: 200px; /* This sets the width of your Telegram image */
+    height: auto; /* This keeps the aspect ratio of your Telegram image */
+  }
+  
+  .clickable-image_whatsapp {
+    left: 300px; /* This positions the WhatsApp link to the right of the Telegram link; adjust as needed based on image width */
+  }
+  
+  .clickable-image_telegram {
+    right: 300px; /* This positions the WhatsApp link to the right of the Telegram link; adjust as needed based on image width */
+  }
+  
+  .clickable-image_whatsapp img {
+    width: 200px; /* This sets the width of your WhatsApp image */
+    height: auto; /* This keeps the aspect ratio of your WhatsApp image */
+  }
 
 
 .secondary-image-container img {
@@ -77,4 +121,25 @@ html, body {
     .secondary-image-container img {
         max-width: 80%;
     }
+}
+
+/* Added styles for image and text alignment */
+.clickable-images-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* Adjust the space between items */
+}
+
+.clickable-image {
+  display: flex;
+  flex-direction: column; /* Stack the image and text on top of each other */
+  align-items: center; /* Center align the content */
+  text-decoration: none; /* Remove underline from links */
+}
+
+.text-telegram, .text-whatsapp {
+  margin-top: 8px; /* Adjust the space between the image and the text */
+  color: #FFF; /* Set the text color */
+  /* Add other styling for the text as needed */
 }
